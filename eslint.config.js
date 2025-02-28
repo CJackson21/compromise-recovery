@@ -23,7 +23,7 @@ export default [
             ],
             "@stylistic/quotes" : [
                 "error",
-                "double",
+                "single",
                 {
                     "allowTemplateLiterals" : true,
                     "avoidEscape" : true,
