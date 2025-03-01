@@ -11,13 +11,14 @@
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,scss,md}'"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.0.8",
+    "@tailwindcss/vite": "^4.0.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.10.1",
-    "@stylistic/eslint-plugin": "^4.0.1",
+    "@stylistic/eslint-plugin": "^4.1.0",
+    "@tailwindcss/postcss": "^4.0.9",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@typescript-eslint/eslint-plugin": "^8.24.1",
@@ -31,7 +32,7 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "postcss": "^8.5.3",
     "prettier": "^3.5.2",
-    "tailwindcss": "^4.0.8",
+    "tailwindcss": "^4.0.9",
     "typescript": "~5.7.2",
     "vite": "^6.1.0"
   }

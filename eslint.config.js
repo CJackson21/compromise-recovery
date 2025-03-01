@@ -3,40 +3,33 @@ import stylistic from "@stylistic/eslint-plugin";
 export default [
     {
         files: ['**/*.ts', '**/*.cts', '**/*.mts'],
-        plugins : {
-            "@stylistic" : stylistic,
+        plugins: {
+            "@stylistic": stylistic,
         },
-        rules : {
-            "@stylistic/comma-dangle" : ["error", "always-multiline"],
-            "@stylistic/eol-last" : ["error", "always"],
-            "@stylistic/indent" : [
+        rules: {
+            "@stylistic/comma-dangle": ["error", "always-multiline"],
+            "@stylistic/eol-last": ["error", "always"],
+            "@stylistic/indent": [
                 "error",
                 "tab",
                 {
-                    "SwitchCase" : 1,
+                    "SwitchCase": 1,
                 },
             ],
-            "@stylistic/key-spacing" : ["error", { "beforeColon" : true }],
-            "@stylistic/linebreak-style" : [
-                "error",
-                "unix",
-            ],
-            "@stylistic/quotes" : [
+            "@stylistic/linebreak-style": ["error", "unix"],
+            "@stylistic/quotes": [
                 "error",
                 "single",
                 {
-                    "allowTemplateLiterals" : true,
-                    "avoidEscape" : true,
+                    "allowTemplateLiterals": true,
+                    "avoidEscape": true,
                 },
             ],
-            "@stylistic/semi" : [
-                "error",
-                "always",
-            ],
-            "@stylistic/type-annotation-spacing" : [
+            "@stylistic/semi": ["error", "always"],
+            "@stylistic/type-annotation-spacing": [
                 "error",
                 {
-                    "before" : true,
+                    "before": true,
                 },
             ],
         },
