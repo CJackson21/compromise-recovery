@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { AppBar, Toolbar, Typography, Container, CssBaseline, Box } from "@mui/material";
+import { Typography, Container, CssBaseline, Box } from "@mui/material";
 import TopBar from "./TopBar";
 
 //---------------------------------------------------------------------------
