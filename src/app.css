@@ -1,8 +1,8 @@
 /* App.css */
 #App {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
+  padding: 0;
   align-items: center;
   text-align: center;
 }

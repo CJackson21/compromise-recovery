@@ -2,9 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 
+import Home from "./components/pages/Home";
+
 // Placeholder Components
 // The pages are in /src/components and need to be stubbed out
-const Home = () => <h1 className="text-3xl font-bold">Home Page</h1>;
 const Social = () => <h1 className="text-3xl font-bold">Social Page</h1>;
 const Family = () => <h1 className="text-3xl font-bold">Family Page</h1>;
 const Devices = () => <h1 className="text-3xl font-bold">Devices Page</h1>;
