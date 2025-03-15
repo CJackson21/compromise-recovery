@@ -1,23 +1,23 @@
 /* App.css */
 #App {
-  max-width: 1280px;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  text-align: center;
+    max-width: 1280px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    text-align: center;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
+    height: 6em;
+    padding: 1.5em;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+    filter: drop-shadow(0 0 2em #646cffaa);
 }
 .logo.preact:hover {
-  filter: drop-shadow(0 0 2em #673ab8aa);
+    filter: drop-shadow(0 0 2em #673ab8aa);
 }
 
 .card {
-  padding: 2em;
+    padding: 2em;
 }
