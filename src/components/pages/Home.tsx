@@ -39,14 +39,18 @@ export default function Home() {
           <Grid size={{xs: 12, sm: 10, md: 8}}>
             <Paper elevation={3} sx={{ p: 3, borderRadius: 2, backgroundColor: 'white' }}>
               <Typography variant="body1" className="text-center">
-                These resources provide practical tools and guidance for securing your devices, online accounts, and even your physical location. Whether you're looking to protect sensitive information, prevent unauthorized access, or maintain privacy, these materials are designed to be accessible for everyone. No matter your level of expertise, these tools are here to support you in safeguarding your digital and physical footprint effectively.
+                These resources provide practical tools and guidance for securing your devices, online accounts, 
+                and even your physical location. Whether you're looking to protect sensitive information, prevent
+                 unauthorized access, or maintain privacy, these materials are designed to be accessible for everyone. 
+                 No matter your level of expertise, these tools are here to support you in safeguarding your digital 
+                 and physical footprint effectively.
               </Typography>
             </Paper>
           </Grid>
         </Grid>
       </Grid>
 
-      {/* Box Layout (4 Gradient Boxes) */}
+      {/* Box Layout */}
       <Grid
         container
         size={12}
