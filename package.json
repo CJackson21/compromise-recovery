@@ -16,6 +16,8 @@
     "@mui/icons-material": "^6.4.7",
     "@mui/material": "^6.4.7",
     "@tailwindcss/vite": "^4.0.9",
+    "framer-motion": "^12.5.0",
+    "motion": "^12.5.0",
     "mui": "^0.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

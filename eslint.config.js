@@ -1,37 +1,28 @@
-import stylistic from "@stylistic/eslint-plugin";
+import stylistic from '@stylistic/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
 
 export default [
     {
-        files: ['**/*.ts', '**/*.cts', '**/*.mts'],
+        files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
+        ignores: ['node_modules', 'dist', 'build', 'src/data'],
+        languageOptions: {
+            parser: tsParser,
+            sourceType: 'module',
+        },
         plugins: {
-            "@stylistic": stylistic,
+            '@stylistic': stylistic,
+            '@typescript-eslint': tsPlugin,
         },
         rules: {
-            "@stylistic/comma-dangle": ["error", "always-multiline"],
-            "@stylistic/eol-last": ["error", "always"],
-            "@stylistic/indent": [
-                "error",
-                "tab",
-                {
-                    "SwitchCase": 1,
-                },
+            '@stylistic/eol-last': ['error', 'always'],
+            '@stylistic/linebreak-style': ['error', 'unix'],
+            '@stylistic/quotes': [
+                'error',
+                'single',
+                { allowTemplateLiterals: true, avoidEscape: true },
             ],
-            "@stylistic/linebreak-style": ["error", "unix"],
-            "@stylistic/quotes": [
-                "error",
-                "single",
-                {
-                    "allowTemplateLiterals": true,
-                    "avoidEscape": true,
-                },
-            ],
-            "@stylistic/semi": ["error", "always"],
-            "@stylistic/type-annotation-spacing": [
-                "error",
-                {
-                    "before": true,
-                },
-            ],
+            '@stylistic/semi': ['error', 'always'],
         },
     },
 ];

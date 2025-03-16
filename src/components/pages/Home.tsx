@@ -19,9 +19,10 @@ export default function Home() {
             textDecoration: 'none',
             color: 'inherit',
             cursor: 'pointer',
+            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
             '&:hover': {
-                backgroundColor: 'transparent',
-                color: 'inherit',
+                transform: 'scale(1.05)',
+                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)',
             },
             '&:focus, &:active': {
                 outline: 'none',
@@ -54,6 +55,7 @@ export default function Home() {
         }),
         []
     );
+
     return (
         <Grid container spacing={6} className="justify-center w-full pt-1">
             {/* Discretionary Message */}
@@ -113,13 +115,13 @@ export default function Home() {
                     to="/social"
                     sx={{ ...boxStyles, ...linkStyles }}
                     className="
-            w-[90%] xs:w-[80%] sm:w-1/2 md:w-1/4 
-            min-h-[20vh] lg:min-h-[25vh]
-            bg-gradient-to-br from-green-100 via-blue-200 to-blue-400 
-            flex flex-col items-center justify-center 
-            border-4 border-black 
-            text-center rounded-xl
-            "
+                        w-[90%] xs:w-[80%] sm:w-1/2 md:w-1/4 
+                        min-h-[20vh] lg:min-h-[25vh]
+                        bg-gradient-to-br from-green-100 via-blue-200 to-blue-400 
+                        flex flex-col items-center justify-center 
+                        border-4 border-black 
+                        text-center rounded-xl
+                    "
                 >
                     <LocationOnIcon sx={{ fontSize: '3rem', mb: 1 }} />
                     <Typography variant="h6" className="p-2">
@@ -138,13 +140,13 @@ export default function Home() {
                     to="/family"
                     sx={{ ...boxStyles, ...linkStyles }}
                     className="
-            w-[90%] xs:w-[80%] sm:w-1/2 md:w-1/4 
-            min-h-[20vh] lg:min-h-[25vh]
-            bg-gradient-to-br from-green-100 via-blue-200 to-blue-400 
-            flex flex-col items-center justify-center 
-            border-4 border-black 
-            text-center rounded-xl
-          "
+                        w-[90%] xs:w-[80%] sm:w-1/2 md:w-1/4 
+                        min-h-[20vh] lg:min-h-[25vh]
+                        bg-gradient-to-br from-green-100 via-blue-200 to-blue-400 
+                        flex flex-col items-center justify-center 
+                        border-4 border-black 
+                        text-center rounded-xl
+                    "
                 >
                     <MailOutlineIcon sx={{ fontSize: '3rem', mb: 1 }} />
                     <Typography variant="h6" className="p-2">
@@ -163,13 +165,13 @@ export default function Home() {
                     to="/devices"
                     sx={{ ...boxStyles, ...linkStyles }}
                     className="
-            w-[90%] xs:w-[80%] sm:w-1/2 md:w-1/4 
-            min-h-[20vh] lg:min-h-[25vh]
-            bg-gradient-to-br from-green-100 via-blue-200 to-blue-400 
-            flex flex-col items-center justify-center 
-            border-4 border-black 
-            text-center rounded-xl
-          "
+                        w-[90%] xs:w-[80%] sm:w-1/2 md:w-1/4 
+                        min-h-[20vh] lg:min-h-[25vh]
+                        bg-gradient-to-br from-green-100 via-blue-200 to-blue-400 
+                        flex flex-col items-center justify-center 
+                        border-4 border-black 
+                        text-center rounded-xl
+                    "
                 >
                     <DevicesIcon sx={{ fontSize: '3rem', mb: 1 }} />
                     <Typography variant="h6" className="p-2">
@@ -188,14 +190,14 @@ export default function Home() {
                     to="/physical"
                     sx={{ ...boxStyles, ...linkStyles }}
                     className="
-            w-[90%] xs:w-[80%] sm:w-1/2 md:w-1/4 
-            min-h-[20vh] lg:min-h-[25vh]
-            bg-gradient-to-br from-green-100 via-blue-200 to-blue-400 
-            flex flex-col items-center justify-center 
-            border-4 border-black 
-            text-center rounded-xl
-            mb-10 sm:mb-0
-          "
+                        w-[90%] xs:w-[80%] sm:w-1/2 md:w-1/4 
+                        min-h-[20vh] lg:min-h-[25vh]
+                        bg-gradient-to-br from-green-100 via-blue-200 to-blue-400 
+                        flex flex-col items-center justify-center 
+                        border-4 border-black 
+                        text-center rounded-xl
+                        mb-10 sm:mb-0
+                    "
                 >
                     <LockIcon sx={{ fontSize: '3rem', mb: 1 }} />
                     <Typography variant="h6" className="p-2">
