@@ -19,4 +19,4 @@ const TopBar: React.FC<TopBarProps> = ({ title = 'Secure Your Digital Presence' 
     );
 };
 
-export default TopBar;
+export default React.memo(TopBar);

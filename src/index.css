@@ -68,3 +68,7 @@ button:focus-visible {
         background-color: #213547;
     }
 }
+
+.paper-container {
+    will-change: transform;
+}

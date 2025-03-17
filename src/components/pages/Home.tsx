@@ -13,7 +13,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import DevicesIcon from '@mui/icons-material/Devices';
 import LockIcon from '@mui/icons-material/Lock';
 
-export default function Home() {
+function Home() {
     const linkStyles = React.useMemo(
         () => ({
             textDecoration: 'none',
@@ -208,3 +208,5 @@ export default function Home() {
         </Grid>
     );
 }
+
+export default Home;

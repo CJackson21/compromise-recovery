@@ -7,7 +7,7 @@ import Paper from '@mui/material/Paper';
 
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import LockIcon from '@mui/icons-material/Lock';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { SocialIcon } from 'react-social-icons';
 
@@ -25,6 +25,7 @@ export default function SocialMedia() {
             minWidth: 250,
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
             '&:hover': { transform: 'translateY(-5px)', boxShadow: 6 },
+            className: 'paper-container',
         }),
         []
     );
@@ -43,16 +44,16 @@ export default function SocialMedia() {
         <Grid container spacing={8} justifyContent="center" className="w-full">
             {/* Section Heading */}
             <Grid size={12} textAlign="center">
-                <LockIcon sx={{ fontSize: 65, color: 'primary.main', mb: 1 }} />
+                <LocationOnIcon sx={{ fontSize: 65, color: 'primary.main', mb: 1 }} />
                 <Typography variant="h4" fontWeight="bold">
                     Protect Your Family's Digital Security
                 </Typography>
             </Grid>
 
-            {/* Merged Introductory Section */}
+            {/* Introductory Section */}
             <Grid container justifyContent="center">
                 <Grid sx={{ xs: 12, sm: 10, md: 8 }}>
-                    <Paper elevation={3} sx={{ p: 4, borderRadius: 2, backgroundColor: 'white' }}>
+                    <Paper elevation={3} sx={{ backgroundColor: 'white', ...cardStyles }}>
                         <Typography variant="body1" className="text-center" gutterBottom>
                             In today's digital world, protecting your family's online presence is
                             more important than ever. Below, you'll find links to official guides
