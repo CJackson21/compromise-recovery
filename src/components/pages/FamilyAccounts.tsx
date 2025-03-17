@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Icons
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import GroupIcon from '@mui/icons-material/Group';
 import LockIcon from '@mui/icons-material/Lock';
@@ -18,9 +19,6 @@ function FamilyAccounts() {
         () => ({
             p: 3,
             borderRadius: 2,
-            // display: 'flex',
-            // flexDirection: 'column',
-            // alignItems: 'center',
             minWidth: 250,
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
             '&:hover': { transform: 'translateY(-5px)', boxShadow: 6 },

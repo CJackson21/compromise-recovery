@@ -2,13 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 
+import Devices from './components/pages/Devices';
+import FamilyAccounts from './components/pages/FamilyAccounts';
 import Home from './components/pages/Home';
 import SocialMedia from './components/pages/SocialMedia';
-import FamilyAccounts from './components/pages/FamilyAccounts';
 
 // Placeholder Components
 // The pages are in /src/components and need to be stubbed out
-const Devices = () => <h1 className="text-3xl font-bold">Devices Page</h1>;
 const Physical = () => <h1 className="text-3xl font-bold">Physical Page</h1>;
 const NotFound = () => <h1 className="text-3xl font-bold">404 - Not Found</h1>;
 
