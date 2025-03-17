@@ -74,7 +74,7 @@ function FamilyAccounts() {
                         <Typography variant="h6" fontWeight="bold" className="mt-4">
                             🔗 Official Guides:
                         </Typography>
-                        <div className="mt-2 space-y-1 ml-8">
+                        <div className="mt-2 space-y-1 ml-8 pb-5">
                             {[
                                 {
                                     label: 'Gmail Security Settings',
@@ -141,7 +141,7 @@ function FamilyAccounts() {
                         <Typography variant="h6" fontWeight="bold" className="mt-4 text-left">
                             🔗 Official Guides:
                         </Typography>
-                        <div className="mt-2 space-y-1 ml-8 text-left">
+                        <div className="mt-2 space-y-1 ml-8 text-left pb-5">
                             {[
                                 {
                                     label: 'Leave a Google Family Group',
