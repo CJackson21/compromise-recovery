@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
@@ -14,7 +13,7 @@ import { SocialIcon } from 'react-social-icons';
 import { guideLinks } from '../../data/guideLinks';
 
 export default function SocialMedia() {
-    // Memoize styles for cards
+    // Memoize styles for the cards
     const cardStyles = React.useMemo(
         () => ({
             p: 3,
@@ -25,20 +24,94 @@ export default function SocialMedia() {
             minWidth: 250,
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
             '&:hover': { transform: 'translateY(-5px)', boxShadow: 6 },
-            className: 'paper-container',
         }),
         []
     );
 
-    // Memoize styles for typography
     const linkTypographyStyle = React.useMemo(
         () => ({
             display: 'block',
             textAlign: 'center',
-            margin: '4 0',
+            margin: '4px 0',
         }),
         []
     );
+
+    // Define the data for each social media platform
+    const socialMediaData = React.useMemo(
+        () => [
+            {
+                name: 'Facebook',
+                Icon: FacebookIcon,
+                color: '#1877F2',
+                links: guideLinks.facebook,
+            },
+            {
+                name: 'Instagram',
+                Icon: InstagramIcon,
+                color: '#E4405F',
+                links: guideLinks.instagram,
+            },
+            {
+                name: 'Twitter',
+                Icon: TwitterIcon,
+                color: '#1DA1F2',
+                links: guideLinks.twitter,
+            },
+            {
+                name: 'Snapchat',
+                isSocialIcon: true,
+                url: 'https://snapchat.com',
+                links: guideLinks.snapchat,
+                sxExtra: { mb: { xs: 4, md: 0 } },
+            },
+        ],
+        []
+    );
+
+    // Memoize the mapped list of cards
+    const renderedCards = React.useMemo(() => {
+        return socialMediaData.map((platform) => (
+            <Paper
+                elevation={3}
+                key={platform.name}
+                sx={{
+                    ...cardStyles,
+                    ...(platform.sxExtra || {}),
+                }}
+            >
+                {platform.isSocialIcon ? (
+                    <SocialIcon
+                        url={platform.url}
+                        style={{
+                            height: 55,
+                            width: 55,
+                            marginBottom: 8,
+                            pointerEvents: 'none',
+                        }}
+                    />
+                ) : (
+                    React.createElement(platform.Icon as React.ElementType, {
+                        sx: { fontSize: 55, color: platform.color, mb: 1 },
+                    })
+                )}
+                <Box sx={{ mt: 1 }}>
+                    {platform.links.map((link, index) => (
+                        <Typography key={index} variant="body2" sx={linkTypographyStyle}>
+                            <a
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: 'inherit', textDecoration: 'none' }}
+                            >
+                                {link.label}
+                            </a>
+                        </Typography>
+                    ))}
+                </Box>
+            </Paper>
+        ));
+    }, [socialMediaData, cardStyles, linkTypographyStyle]);
 
     return (
         <Grid container spacing={8} justifyContent="center" className="w-full">
@@ -51,21 +124,19 @@ export default function SocialMedia() {
             </Grid>
 
             {/* Introductory Section */}
-            <Grid container justifyContent="center">
-                <Grid sx={{ xs: 12, sm: 10, md: 8 }}>
-                    <Paper elevation={3} sx={{ backgroundColor: 'white', ...cardStyles }}>
-                        <Typography variant="body1" className="text-center" gutterBottom>
-                            In today's digital world, protecting your family's online presence is
-                            more important than ever. Below, you'll find links to official guides
-                            from Facebook, Instagram, Snapchat, and Twitter/X. These resources
-                            provide step-by-step instructions on strengthening your account
-                            security, disabling location tracking, and managing who can see your
-                            activity. Whether you want to fine-tune your privacy settings, secure
-                            your accounts, or log out from unrecognized devices, these guides will
-                            help you stay in control of your digital footprint.
-                        </Typography>
-                    </Paper>
-                </Grid>
+            <Grid container justifyContent="center" size={{ xs: 12, sm: 10, md: 8 }}>
+                <Paper elevation={3} sx={{ backgroundColor: 'white', ...cardStyles }}>
+                    <Typography variant="body1" className="text-center" gutterBottom>
+                        In today's digital world, protecting your family's online presence is more
+                        important than ever. Below, you'll find links to official guides from
+                        Facebook, Instagram, Snapchat, and Twitter/X. These resources provide
+                        step-by-step instructions on strengthening your account security, disabling
+                        location tracking, and managing who can see your activity. Whether you want
+                        to fine-tune your privacy settings, secure your accounts, or log out from
+                        unrecognized devices, these guides will help you stay in control of your
+                        digital footprint.
+                    </Typography>
+                </Paper>
             </Grid>
 
             {/* Social Media Icons and Links */}
@@ -77,89 +148,7 @@ export default function SocialMedia() {
                     gap={4}
                     flexWrap="wrap"
                 >
-                    {/* Facebook */}
-                    <Paper elevation={3} sx={cardStyles}>
-                        <FacebookIcon sx={{ fontSize: 55, color: '#1877F2', mb: 1 }} />
-                        <Box sx={{ mt: 1 }}>
-                            {guideLinks.facebook.map((link, index) => (
-                                <Typography key={index} variant="body2" sx={linkTypographyStyle}>
-                                    <a
-                                        href={link.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        style={{ textDecoration: 'none', color: 'inherit' }}
-                                    >
-                                        {link.label}
-                                    </a>
-                                </Typography>
-                            ))}
-                        </Box>
-                    </Paper>
-
-                    {/* Instagram */}
-                    <Paper elevation={3} sx={cardStyles}>
-                        <InstagramIcon sx={{ fontSize: 55, color: '#E4405F', mb: 1 }} />
-                        <Box sx={{ mt: 1 }}>
-                            {guideLinks.instagram.map((link, index) => (
-                                <Typography key={index} variant="body2" sx={linkTypographyStyle}>
-                                    <a
-                                        href={link.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        style={{ textDecoration: 'none', color: 'inherit' }}
-                                    >
-                                        {link.label}
-                                    </a>
-                                </Typography>
-                            ))}
-                        </Box>
-                    </Paper>
-
-                    {/* Twitter */}
-                    <Paper elevation={3} sx={cardStyles}>
-                        <TwitterIcon sx={{ fontSize: 55, color: '#1DA1F2', mb: 1 }} />
-                        <Box sx={{ mt: 1 }}>
-                            {guideLinks.twitter.map((link, index) => (
-                                <Typography key={index} variant="body2" sx={linkTypographyStyle}>
-                                    <a
-                                        href={link.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        style={{ textDecoration: 'none', color: 'inherit' }}
-                                    >
-                                        {link.label}
-                                    </a>
-                                </Typography>
-                            ))}
-                        </Box>
-                    </Paper>
-
-                    {/* Snapchat */}
-                    <Paper elevation={3} sx={{ ...cardStyles, mb: { xs: 4, md: 0 } }}>
-                        <SocialIcon
-                            url="https://snapchat.com"
-                            style={{
-                                height: 55,
-                                width: 55,
-                                marginBottom: 8,
-                                pointerEvents: 'none',
-                            }}
-                        />
-                        <Box sx={{ mt: 1 }}>
-                            {guideLinks.snapchat.map((link, index) => (
-                                <Typography key={index} variant="body2" sx={linkTypographyStyle}>
-                                    <a
-                                        href={link.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        style={{ textDecoration: 'none', color: 'inherit' }}
-                                    >
-                                        {link.label}
-                                    </a>
-                                </Typography>
-                            ))}
-                        </Box>
-                    </Paper>
+                    {renderedCards}
                 </Box>
             </Grid>
         </Grid>

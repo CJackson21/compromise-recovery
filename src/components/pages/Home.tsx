@@ -14,6 +14,7 @@ import DevicesIcon from '@mui/icons-material/Devices';
 import LockIcon from '@mui/icons-material/Lock';
 
 function Home() {
+    // Memoize styles
     const linkStyles = React.useMemo(
         () => ({
             textDecoration: 'none',
@@ -34,7 +35,7 @@ function Home() {
     const boxStyles = React.useMemo(
         () => ({
             width: '90%',
-            minHeight: { xs: '20vh', lg: '25vh' },
+            minHeight: { xs: '10em', lg: '12em' },
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
