@@ -4,6 +4,7 @@ import React from 'react';
 import DevicesIcon from '@mui/icons-material/Devices';
 import ListItemIcon from '@mui/material/ListItemIcon';
 
+// Layout components
 import Grid from '@mui/material/Grid2';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';

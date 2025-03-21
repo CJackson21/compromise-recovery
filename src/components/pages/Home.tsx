@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 
-// Icons
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
@@ -77,25 +76,16 @@ function Home() {
                     The resources available on this page are intended to help you take full control
                     of your digital presence.
                 </Typography>
-
-                <Grid container justifyContent="center">
-                    <Grid size={{ xs: 12, sm: 10, md: 8 }}>
-                        <Paper
-                            elevation={3}
-                            sx={{ p: 3, borderRadius: 2, backgroundColor: 'white' }}
-                        >
-                            <Typography variant="body1" className="text-center">
-                                These resources provide practical tools and guidance for securing
-                                your devices, online accounts, and even your physical location.
-                                Whether you're looking to protect sensitive information, prevent
-                                unauthorized access, or maintain privacy, these materials are
-                                designed to be accessible for everyone. No matter your level of
-                                expertise, these tools are here to support you in safeguarding your
-                                digital and physical footprint effectively.
-                            </Typography>
-                        </Paper>
-                    </Grid>
-                </Grid>
+                <Paper elevation={3} sx={{ p: 3, borderRadius: 2, backgroundColor: 'white' }}>
+                    <Typography variant="body1" className="text-center">
+                        These resources provide practical tools and guidance for securing your
+                        devices, online accounts, and even your physical location. Whether you're
+                        looking to protect sensitive information, prevent unauthorized access, or
+                        maintain privacy, these materials are designed to be accessible for
+                        everyone. No matter your level of expertise, these tools are here to support
+                        you in safeguarding your digital and physical footprint effectively.
+                    </Typography>
+                </Paper>
             </Grid>
 
             {/* Box Layout */}

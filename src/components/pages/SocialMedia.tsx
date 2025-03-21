@@ -141,7 +141,7 @@ export default function SocialMedia() {
             </Grid>
 
             {/* Introductory Section */}
-            <Grid container justifyContent="center" size={{ xs: 12, sm: 10, md: 8 }}>
+            <Grid sx={{ xs: 12, sm: 10, md: 8 }}>
                 <Paper elevation={3} sx={{ backgroundColor: 'white', ...cardStyles }}>
                     <Typography variant="body1" className="text-center" gutterBottom>
                         In today's digital world, protecting your family's online presence is more
@@ -162,7 +162,7 @@ export default function SocialMedia() {
                     display="flex"
                     justifyContent="center"
                     alignItems="center"
-                    gap={4}
+                    gap={6}
                     flexWrap="wrap"
                 >
                     {renderedCards}
