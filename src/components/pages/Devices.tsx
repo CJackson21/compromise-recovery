@@ -33,7 +33,7 @@ function Devices() {
             '✅ Check for Tracking Apps or Spyware - Look for unknown apps or settings that allow remote access.',
             '✅ Remove Unwanted Devices - Check if your phone or watch is connected to any old accounts.',
             '✅ Turn Off Bluetooth & Wi-Fi When Not in Use - Prevent unauthorized tracking and connections.',
-            "✅Factory Reset if Necessary - If you're unsure whether your device is fully secure, a factory reset ensures a clean start.",
+            "✅ Factory Reset if Necessary - If you're unsure whether your device is fully secure, a factory reset ensures a clean start.",
         ],
         []
     );

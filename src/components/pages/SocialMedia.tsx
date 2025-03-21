@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
@@ -8,9 +10,16 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { SocialIcon } from 'react-social-icons';
+import { FaSnapchatGhost } from 'react-icons/fa';
 
-import { guideLinks } from '../../data/guideLinks';
+interface PlatformData {
+    name: string;
+    Icon?: React.ComponentType<any>;
+    color?: string;
+    isSocialIcon?: boolean;
+    url?: string;
+    sxExtra?: object;
+}
 
 export default function SocialMedia() {
     // Memoize styles for the cards
@@ -28,90 +37,98 @@ export default function SocialMedia() {
         []
     );
 
-    const linkTypographyStyle = React.useMemo(
-        () => ({
-            display: 'block',
-            textAlign: 'center',
-            margin: '4px 0',
-        }),
-        []
-    );
+    // mui's library at this time does not have a
+    // snapchat icon, so the one used in this project
+    // was pulled from another library, this just
+    // makes it look cleaner
+    const SnapchatIcon = React.useMemo(() => {
+        return () => (
+            <Box
+                sx={{
+                    height: 60,
+                    width: 60,
+                    borderRadius: '10%',
+                    backgroundColor: '#FFFC00',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    mb: 0,
+                }}
+            >
+                <FaSnapchatGhost style={{ fontSize: 40, color: 'black ' }} />
+            </Box>
+        );
+    }, []);
 
     // Define the data for each social media platform
-    const socialMediaData = React.useMemo(
+    const socialMediaData: PlatformData[] = React.useMemo(
         () => [
             {
                 name: 'Facebook',
                 Icon: FacebookIcon,
                 color: '#1877F2',
-                links: guideLinks.facebook,
             },
             {
                 name: 'Instagram',
                 Icon: InstagramIcon,
                 color: '#E4405F',
-                links: guideLinks.instagram,
             },
             {
                 name: 'Twitter',
                 Icon: TwitterIcon,
                 color: '#1DA1F2',
-                links: guideLinks.twitter,
             },
             {
                 name: 'Snapchat',
-                isSocialIcon: true,
-                url: 'https://snapchat.com',
-                links: guideLinks.snapchat,
-                sxExtra: { mb: { xs: 4, md: 0 } },
+                Icon: SnapchatIcon,
             },
         ],
         []
     );
 
-    // Memoize the mapped list of cards
+    // Helper function to render the icon
+    const renderIcon = React.useCallback((platform: PlatformData) => {
+        if (platform.Icon) {
+            const IconComponent = platform.Icon;
+            return (
+                <IconComponent
+                    style={{
+                        fontSize: 55,
+                        color: platform.color,
+                        marginBottom: 8,
+                    }}
+                />
+            );
+        }
+        return null;
+    }, []);
+
+    // Wrap every card with Link for internal navigation
     const renderedCards = React.useMemo(() => {
-        return socialMediaData.map((platform) => (
-            <Paper
-                elevation={3}
-                key={platform.name}
-                sx={{
-                    ...cardStyles,
-                    ...(platform.sxExtra || {}),
-                }}
-            >
-                {platform.isSocialIcon ? (
-                    <SocialIcon
-                        url={platform.url}
-                        style={{
-                            height: 55,
-                            width: 55,
-                            marginBottom: 8,
-                            pointerEvents: 'none',
-                        }}
-                    />
-                ) : (
-                    React.createElement(platform.Icon as React.ElementType, {
-                        sx: { fontSize: 55, color: platform.color, mb: 1 },
-                    })
-                )}
-                <Box sx={{ mt: 1 }}>
-                    {platform.links.map((link, index) => (
-                        <Typography key={index} variant="body2" sx={linkTypographyStyle}>
-                            <a
-                                href={link.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ color: 'inherit', textDecoration: 'none' }}
-                            >
-                                {link.label}
-                            </a>
-                        </Typography>
-                    ))}
-                </Box>
-            </Paper>
-        ));
-    }, [socialMediaData, cardStyles, linkTypographyStyle]);
+        return socialMediaData.map((platform) => {
+            const cardContent = (
+                <Paper
+                    elevation={3}
+                    sx={{
+                        ...cardStyles,
+                        cursor: 'pointer',
+                    }}
+                >
+                    {renderIcon(platform)}
+                </Paper>
+            );
+
+            return (
+                <Link
+                    key={platform.name}
+                    to={`/guide/${platform.name.toLowerCase()}`}
+                    style={{ textDecoration: 'none' }}
+                >
+                    {cardContent}
+                </Link>
+            );
+        });
+    }, [socialMediaData, cardStyles]);
 
     return (
         <Grid container spacing={8} justifyContent="center" className="w-full">

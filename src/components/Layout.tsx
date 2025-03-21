@@ -7,17 +7,11 @@ import { useLocation } from 'react-router-dom';
 import TopBar from './TopBar';
 import theme from '../styles/theme';
 
-//---------------------------------------------------------------------------
-// Types
-//---------------------------------------------------------------------------
 interface LayoutProps {
     children: ReactNode;
     title?: string;
 }
 
-//---------------------------------------------------------------------------
-// Layout Component
-//---------------------------------------------------------------------------
 const Layout: React.FC<LayoutProps> = ({ children, title }) => {
     const location = useLocation();
 
@@ -29,6 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
             '/family': 'Email and Family Accounts',
             '/devices': 'All Devices (Laptop & Phones)',
             '/physical': 'Physical Security',
+            '/guide/instagram': 'Instagram Security Navigation',
         };
         return titleMap[location.pathname] || '404 - Page Not Found';
     }, [location.pathname]);
