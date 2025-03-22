@@ -25,11 +25,13 @@ export const socialMediaGuides: Record<string, SocialMediaGuide> = {
         name: 'Instagram',
         steps: [
             {
-                title: 'Delete via Settings',
+                title: 'Deactivate on Mobile',
                 steps: [
                     'Sign into Instagram.',
-                    'Go to More > Settings > Accounts Center.',
-                    'Select Personal details > Account ownership and control > Deactivation or deletion.',
+                    'Go to your Account Profile > menu > Settings and privacy.',
+                    'Open Accounts Center > Personal details.',
+                    'Select Account ownership and control > Deactivation or deletion. Select the account you want to remove, choose Delete account, and tap Continue.',
+                    'Select a reason for leaving and tap Continue. Sign in again to confirm you want to permanently delete your Instagram account.',
                 ],
                 images: [
                     '/img/delete_insta_mobile_1.png',
@@ -40,20 +42,7 @@ export const socialMediaGuides: Record<string, SocialMediaGuide> = {
                 ],
             },
             {
-                title: 'Delete via Direct Link',
-                steps: [
-                    'Sign into Instagram and go to the deletion page.',
-                    'Choose a reason from the dropdown.',
-                    'Click Delete.',
-                ],
-                link: 'https://www.instagram.com/accounts/remove/request/permanent/',
-                // TODO: add images
-                images: [],
-            },
-            {
                 title: 'Deactivate on a Computer',
-                description:
-                    'The deactivation process on a computer follows a similar process to the phone app, but it’s done through a web browser instead.',
                 steps: [
                     'Sign into Instagram.',
                     'Go to More > Settings > Accounts Centre > Personal details > Account ownership and control.',
@@ -61,6 +50,17 @@ export const socialMediaGuides: Record<string, SocialMediaGuide> = {
                     'Select Deactivate account, click Continue, and re-enter your password to confirm.',
                     'Choose a reason for deactivating Instagram, click Continue, and then Deactivate account to confirm.',
                 ],
+                // TODO: add images
+                images: [],
+            },
+            {
+                title: 'Deactivate via Direct Link',
+                steps: [
+                    'Sign into Instagram and go to the deletion page.',
+                    'Choose a reason from the dropdown.',
+                    'Click Delete.',
+                ],
+                link: 'https://www.instagram.com/accounts/remove/request/permanent/',
                 // TODO: add images
                 images: [],
             },
