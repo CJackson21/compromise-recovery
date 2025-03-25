@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 interface TopBarProps {
     title?: string;
@@ -7,15 +9,38 @@ interface TopBarProps {
 
 const TopBar: React.FC<TopBarProps> = ({ title = 'Secure Your Digital Presence' }) => {
     return (
-        <div className="w-full bg-gradient-to-r from-cyan-100 via-blue-200 to-blue-400 px-4 sm:px-8 py-6 flex items-center">
-            {/* GFU Logo & Title in Flexbox */}
-            <div className="flex items-center gap-x-4 w-full">
+        <Box
+            sx={{
+                width: '100%',
+                background: 'linear-gradient(to bottom right, #c8f2c2, #a6c8ff)',
+                px: { xs: 2, sm: 4 },
+                py: 3,
+                display: 'flex',
+                alignItems: 'center',
+            }}
+        >
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, width: '100%' }}>
                 <Link to="/">
-                    <img src="/img/gf-blue-gold.png" alt="Logo" className="h-8 sm:h-16 w-auto" />
+                    <img
+                        src="/img/gf-blue-gold.png"
+                        alt="Logo"
+                        style={{ height: '3rem', width: 'auto' }}
+                        className="sm:h-16"
+                    />
                 </Link>
-                <h2 className="text-2xl sm:text-5xl font-bold text-blue-900">{title}</h2>
-            </div>
-        </div>
+                <Typography
+                    variant="h4"
+                    component="h2"
+                    fontWeight="bold"
+                    sx={{
+                        fontSize: { xs: '1.5rem', sm: '3rem' },
+                        color: '#1e3a8a',
+                    }}
+                >
+                    {title}
+                </Typography>
+            </Box>
+        </Box>
     );
 };
 

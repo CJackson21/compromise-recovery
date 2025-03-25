@@ -5,7 +5,7 @@ const lightTheme = createTheme({
         mode: 'light',
         background: {
             default: '#e0e0e0',
-            paper: '#ffffff',
+            paper: '#FEFEFE',
         },
         primary: {
             main: '#646cff',
@@ -48,7 +48,7 @@ const lightTheme = createTheme({
         MuiCssBaseline: {
             styleOverrides: {
                 body: {
-                    backgroundColor: '#edf3fc',
+                    backgroundColor: 'white',
                 },
             },
         },
