@@ -104,36 +104,27 @@ export default function SocialMedia() {
     }, []);
 
     // Wrap every card with Link for internal navigation
-    const renderedCards = React.useMemo(() => {
-        return socialMediaData.map((platform) => {
-            const cardContent = (
-                <Paper
-                    elevation={3}
-                    sx={{
-                        ...cardStyles,
-                        cursor: 'pointer',
-                    }}
-                >
-                    {renderIcon(platform)}
-                </Paper>
-            );
-
-            return (
+    const renderedCards = React.useMemo(
+        () =>
+            socialMediaData.map((platform) => (
                 <Link
                     key={platform.name}
                     to={`/guide/${platform.name.toLowerCase()}`}
                     style={{ textDecoration: 'none' }}
                 >
-                    {cardContent}
+                    <Paper elevation={3} sx={{ ...cardStyles, cursor: 'pointer' }}>
+                        {renderIcon(platform)}
+                        <Typography fontWeight="bold">{platform.name}</Typography>
+                    </Paper>
                 </Link>
-            );
-        });
-    }, [socialMediaData, cardStyles]);
+            )),
+        [socialMediaData, cardStyles]
+    );
 
     return (
-        <Grid container spacing={8} justifyContent="center" className="w-full">
+        <Grid container spacing={8} className="justify-center w-full pt-8">
             {/* Section Heading */}
-            <Grid size={12} textAlign="center">
+            <Grid size={12} className="text-center">
                 <LocationOnIcon sx={{ fontSize: 65, color: 'primary.main', mb: 1 }} />
                 <Typography variant="h4" fontWeight="bold">
                     Protect Your Family's Digital Security
@@ -142,7 +133,7 @@ export default function SocialMedia() {
 
             {/* Introductory Section */}
             <Grid sx={{ xs: 12, sm: 10, md: 8 }}>
-                <Paper elevation={3} sx={{ backgroundColor: 'white', ...cardStyles }}>
+                <Paper elevation={3} sx={{ ...cardStyles }}>
                     <Typography variant="body1" className="text-center" gutterBottom>
                         In today's digital world, protecting your family's online presence is more
                         important than ever. Below, you'll find links to official guides from
@@ -157,7 +148,7 @@ export default function SocialMedia() {
             </Grid>
 
             {/* Social Media Icons and Links */}
-            <Grid size={12} textAlign="center">
+            <Grid size={12} className="text-center pt-15">
                 <Box
                     display="flex"
                     justifyContent="center"

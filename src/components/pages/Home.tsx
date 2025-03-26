@@ -83,30 +83,22 @@ function Home() {
 
     return (
         <Grid container spacing={15}>
-            <Grid
-                className="pt-1"
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 6,
-                    flexWrap: { xs: 'wrap', md: 'nowrap' },
-                }}
-            >
+            <Grid gap={6} className="pt-1 flex flex-col flex-wrap md:flex-nowrap">
                 {/* Discretionary Message */}
-                <Grid size={12} className="w-full display-flex justify-center mb-20">
-                    <Typography
-                        variant="h4"
-                        fontWeight="bold"
-                        className="text-red-500"
-                        textAlign="center"
-                    >
+                <Grid size={12} className="w-full display-flex justify-center mt-12">
+                    <Typography variant="h4" fontWeight="bold" className="text-red-500 text-center">
                         If you feel you are in immediate danger, call 9-1-1
                     </Typography>
                 </Grid>
 
                 {/* Intro Section */}
                 <Grid size={12} className="my-4">
-                    <Typography variant="h5" fontWeight="bold" className="text-center pb-4">
+                    <Typography
+                        variant="h5"
+                        fontWeight="bold"
+                        className="text-center"
+                        sx={{ mb: 6 }}
+                    >
                         The resources available on this page are intended to help you take full
                         control of your digital presence.
                     </Typography>

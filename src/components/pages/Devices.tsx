@@ -40,9 +40,9 @@ function Devices() {
     );
 
     return (
-        <Grid container spacing={8} justifyContent="center" className="w-full pt-8">
+        <Grid container spacing={8} className="justify-center w-full pt-8">
             {/* Section Heading */}
-            <Grid size={12} textAlign="center">
+            <Grid size={12} className="text-center">
                 <DevicesIcon sx={{ fontSize: 65, color: 'primary.main', mb: 1 }} />
                 <Typography variant="h4" fontWeight="bold">
                     Secure Your Devices
@@ -52,10 +52,15 @@ function Devices() {
             {/* Introductory Section */}
             <Grid sx={{ xs: 12, sm: 10, md: 8 }}>
                 <Paper elevation={3} sx={cardStyles}>
-                    <Typography variant="h5" fontWeight="bold" textAlign="center" mb={4}>
+                    <Typography variant="h5" fontWeight="bold" className="text-center" mb={4}>
                         Securing Your Personal Devices
                     </Typography>
-                    <Typography variant="body1" color="textSecondary" textAlign="center" mb={4}>
+                    <Typography
+                        variant="body1"
+                        color="textSecondary"
+                        className="text-center"
+                        mb={4}
+                    >
                         Your personal devices store sensitive information, track your location, and
                         connect to online accounts. If someone has access to your phone, laptop, or
                         smartwatch, they may be able to monitor your activity, track your movements,
@@ -69,10 +74,15 @@ function Devices() {
             {/* Secure Phone Section */}
             <Grid sx={{ xs: 12, sm: 10, md: 8, pb: 10 }}>
                 <Paper elevation={3} sx={cardStyles}>
-                    <Typography variant="h5" fontWeight="bold" textAlign="center" mb={4}>
+                    <Typography variant="h5" fontWeight="bold" className="text-center" mb={4}>
                         Securing Your Phone & Smartwatch
                     </Typography>
-                    <Typography variant="body1" color="textSecondary" textAlign="center" mb={4}>
+                    <Typography
+                        variant="body1"
+                        color="textSecondary"
+                        className="text-center"
+                        mb={4}
+                    >
                         Since phones and smartwatches constantly track location and sync with other
                         devices, take these steps to fully secure them:
                     </Typography>

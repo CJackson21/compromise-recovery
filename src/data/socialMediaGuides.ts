@@ -45,7 +45,7 @@ export const socialMediaGuides: Record<string, SocialMediaGuide> = {
                 title: 'Deactivate on a Computer',
                 steps: [
                     'Sign into Instagram.',
-                    'Go to More > Settings > Accounts Centre > Personal details > Account ownership and control.',
+                    'Go to More > Settings > Accounts Center > Personal details > Account ownership and control.',
                     'Click Deactivation or deletion and choose the account you want to deactivate.',
                     'Select Deactivate account, click Continue, and re-enter your password to confirm.',
                     'Choose a reason for deactivating Instagram, click Continue, and then Deactivate account to confirm.',
