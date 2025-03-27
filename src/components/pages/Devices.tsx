@@ -12,8 +12,16 @@ import ListItemText from '@mui/material/ListItemText';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
+// Guide data
+import {
+    deviceSecurityGuide,
+    computerSecurityGuide,
+    hiddenDeviceGuide,
+} from '../../data/deviceSecurityGuide.ts';
+
+const allSecurityGuides = [deviceSecurityGuide, computerSecurityGuide, hiddenDeviceGuide];
+
 function Devices() {
-    // Memoize styles for the cards
     const cardStyles = React.useMemo(
         () => ({
             p: 3,
@@ -25,17 +33,6 @@ function Devices() {
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
             '&:hover': { transform: 'translateY(-5px)', boxShadow: 6 },
         }),
-        []
-    );
-
-    const securitySteps = React.useMemo(
-        () => [
-            '✅ Turn Off Location Services - Prevent apps and system services from tracking your movements.',
-            '✅ Check for Tracking Apps or Spyware - Look for unknown apps or settings that allow remote access.',
-            '✅ Remove Unwanted Devices - Check if your phone or watch is connected to any old accounts.',
-            '✅ Turn Off Bluetooth & Wi-Fi When Not in Use - Prevent unauthorized tracking and connections.',
-            "✅ Factory Reset if Necessary - If you're unsure whether your device is fully secure, a factory reset ensures a clean start.",
-        ],
         []
     );
 
@@ -71,31 +68,32 @@ function Devices() {
                 </Paper>
             </Grid>
 
-            {/* Secure Phone Section */}
-            <Grid sx={{ xs: 12, sm: 10, md: 8, pb: 10 }}>
-                <Paper elevation={3} sx={cardStyles}>
-                    <Typography variant="h5" fontWeight="bold" className="text-center" mb={4}>
-                        Securing Your Phone & Smartwatch
-                    </Typography>
-                    <Typography
-                        variant="body1"
-                        color="textSecondary"
-                        className="text-center"
-                        mb={4}
-                    >
-                        Since phones and smartwatches constantly track location and sync with other
-                        devices, take these steps to fully secure them:
-                    </Typography>
-                    <List>
-                        {securitySteps.map((step, index) => (
-                            <ListItem key={index}>
-                                <ListItemIcon></ListItemIcon>
-                                <ListItemText primary={step} />
-                            </ListItem>
-                        ))}
-                    </List>
-                </Paper>
-            </Grid>
+            {/* Render Each Guide Card */}
+            {allSecurityGuides.map((guide, index) => (
+                <Grid key={index} sx={{ xs: 12, sm: 10, md: 8, pb: 6 }}>
+                    <Paper elevation={3} sx={cardStyles}>
+                        <Typography variant="h5" fontWeight="bold" className="text-center" mb={4}>
+                            {guide.title}
+                        </Typography>
+                        <Typography
+                            variant="body1"
+                            color="textSecondary"
+                            className="text-center"
+                            mb={4}
+                        >
+                            {guide.intro}
+                        </Typography>
+                        <List>
+                            {guide.steps.map((step, idx) => (
+                                <ListItem key={idx}>
+                                    <ListItemIcon></ListItemIcon>
+                                    <ListItemText primary={step} />
+                                </ListItem>
+                            ))}
+                        </List>
+                    </Paper>
+                </Grid>
+            ))}
         </Grid>
     );
 }

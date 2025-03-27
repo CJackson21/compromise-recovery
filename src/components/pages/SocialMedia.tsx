@@ -109,7 +109,7 @@ export default function SocialMedia() {
             socialMediaData.map((platform) => (
                 <Link
                     key={platform.name}
-                    to={`/guide/${platform.name.toLowerCase()}`}
+                    to={`/social/${platform.name.toLowerCase()}`}
                     style={{ textDecoration: 'none' }}
                 >
                     <Paper elevation={3} sx={{ ...cardStyles, cursor: 'pointer' }}>

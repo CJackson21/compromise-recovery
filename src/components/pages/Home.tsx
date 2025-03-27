@@ -82,7 +82,7 @@ function Home() {
     );
 
     return (
-        <Grid container spacing={15}>
+        <Grid container spacing={15} className="justify-center">
             <Grid gap={6} className="pt-1 flex flex-col flex-wrap md:flex-nowrap">
                 {/* Discretionary Message */}
                 <Grid size={12} className="w-full display-flex justify-center mt-12">
