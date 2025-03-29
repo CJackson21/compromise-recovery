@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+// Layout components
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 

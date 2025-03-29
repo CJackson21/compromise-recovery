@@ -1,15 +1,18 @@
 import React, { ReactNode, useMemo } from 'react';
 
+// Layout components
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 
+// Theme
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../../styles/theme';
 
 import { useLocation } from 'react-router-dom';
 
+// Page layout helper components
 import TopBar from './TopBar';
 import Breadcrumb from './BreadCrumb';
 
@@ -21,6 +24,7 @@ interface LayoutProps {
 function PageLayout({ children, title }: LayoutProps) {
     const location = useLocation();
 
+    // Titles the page based on which url is being visited
     const pageTitle = useMemo(() => {
         const titleMap: Record<string, string> = {
             '/': 'Secure Your Digital Presence',
@@ -38,15 +42,10 @@ function PageLayout({ children, title }: LayoutProps) {
             <CssBaseline />
             <TopBar title={pageTitle} />
             <Box sx={{ position: 'relative', width: '100%' }}>
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        left: '1rem',
-                        zIndex: 10,
-                    }}
-                >
+                <Box sx={{ position: 'absolute', left: '1rem', zIndex: 10 }}>
                     <Breadcrumb />
                 </Box>
+
                 {/* Main layout grid */}
                 <Grid
                     container

@@ -1,44 +1,36 @@
-import React from 'react';
-
+import React, { useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { titleCase } from 'title-case';
 
+// Layout components
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
 
-function Breadcrumb() {
-    const location = useLocation();
-    const pathnames = React.useMemo(() => {
-        return location.pathname.split('/').filter(Boolean);
-    }, [location.pathname]);
+const Breadcrumb = () => {
+    const { pathname } = useLocation();
+    const pathnames = useMemo(() => pathname.split('/').filter(Boolean), [pathname]);
+    const linkStyle = { textDecoration: 'none', color: '#1976d2' };
 
     return (
         <Breadcrumbs aria-label="breadcrumb" sx={{ mb: 2 }}>
-            {/* Home Link */}
-            <Link to="/" style={{ textDecoration: 'none', color: '#1976d2' }}>
+            <Link to="/" style={linkStyle}>
                 <Typography fontWeight="bold">Home</Typography>
             </Link>
-
-            {/* Dynamically render the path segments */}
             {pathnames.map((segment, index) => {
                 const to = `/${pathnames.slice(0, index + 1).join('/')}`;
                 const isLast = index === pathnames.length - 1;
-                if (isLast) {
-                    return (
-                        <Typography key={to} color="text.primary">
-                            {titleCase(segment)}
-                        </Typography>
-                    );
-                } else {
-                    return (
-                        <Link key={to} to={to} style={{ textDecoration: 'none', color: '#1976d2' }}>
-                            <Typography>{titleCase(segment)}</Typography>
-                        </Link>
-                    );
-                }
+                return isLast ? (
+                    <Typography key={to} color="text.primary">
+                        {titleCase(segment)}
+                    </Typography>
+                ) : (
+                    <Link key={to} to={to} style={linkStyle}>
+                        <Typography>{titleCase(segment)}</Typography>
+                    </Link>
+                );
             })}
         </Breadcrumbs>
     );
-}
+};
 
 export default Breadcrumb;

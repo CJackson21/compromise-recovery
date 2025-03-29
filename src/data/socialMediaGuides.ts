@@ -1,3 +1,13 @@
+/**
+ * @file socialMediaGuides.ts
+ * @description This file contains step-by-step guides for managing or deleting social media accounts.
+ * It is used as a data source for the SocialMediaGuides component, enabling easier maintainability
+ * and consistent formatting across platforms. The structure supports multiple sections per guide, with
+ * optional images and direct links. This file will be updated over time as platform steps change.
+ *
+ * (You're welcome, Wilson.)
+ */
+
 export interface Section {
     title: string;
     description?: string;
@@ -11,15 +21,6 @@ export interface SocialMediaGuide {
     steps: Section[];
 }
 
-/**
- * This file serves as the data that will go
- * on the social media guids component.
- * Using this file allows for the use of a
- * template component that we feed the actual
- * data into, as well as allows for easier
- * maintainability, as this will be updated
- * overtime. (You're welcome Wilson)
- * **/
 export const socialMediaGuides: Record<string, SocialMediaGuide> = {
     instagram: {
         name: 'Instagram',

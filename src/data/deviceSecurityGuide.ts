@@ -1,3 +1,10 @@
+/**
+ * @file guideSections.ts
+ * @description This file defines reusable security guide sections for the application.
+ * Each guide includes a title, a brief introduction, and a list of actionable steps.
+ * These guides are used to help users improve their digital safety across different devices.
+ */
+
 export interface GuideSectionCard {
     title: string;
     intro: string;

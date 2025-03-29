@@ -38,6 +38,7 @@ function PhysicalSecurity() {
                     Ensure you are not only secured digitally, but physically too
                 </Typography>
             </Grid>
+
             {/* Guide Sections */}
             {physicalSecurityGuides.map((section, index) => (
                 <Grid key={index} sx={{ xs: 12, sm: 10, md: 8, mt: index === 1 ? 4 : 0, mb: 5 }}>

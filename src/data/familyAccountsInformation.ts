@@ -1,3 +1,11 @@
+/**
+ * @file familyAccountsGuides.ts
+ * @description This file contains structured guidance for users on securing personal email accounts
+ * and managing shared or family-linked online accounts. Each guide includes a title, icon identifier,
+ * description, security steps, and helpful resource links. These guides are used in the app to educate
+ * users about digital safety and privacy best practices.
+ */
+
 export interface GuideSection {
     title: string;
     description: string;

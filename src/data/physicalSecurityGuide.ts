@@ -1,3 +1,11 @@
+/**
+ * @file physicalSecurityGuides.ts
+ * @description This file defines physical security guide content focused on staying safe in public spaces.
+ * It provides actionable safety tips and resources for individuals concerned about being followed, monitored,
+ * or harmed in person. Each guide includes a title, description, icon, step-by-step advice, and supporting links.
+ * Used within the app to promote real-world personal safety and awareness.
+ */
+
 export interface GuideSection {
     title: string;
     description: string;
