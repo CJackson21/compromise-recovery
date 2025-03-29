@@ -24,7 +24,7 @@ interface Guide {
     steps: Section[];
 }
 
-export default function SocialMediaGuidePage() {
+function SocialMediaGuidePage() {
     const { platform } = useParams();
     const [expanded, setExpanded] = React.useState<number | null>(null);
     const guide: Guide | undefined = React.useMemo(
@@ -113,3 +113,5 @@ export default function SocialMediaGuidePage() {
         </Box>
     );
 }
+
+export default SocialMediaGuidePage;

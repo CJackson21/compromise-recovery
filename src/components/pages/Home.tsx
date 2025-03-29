@@ -82,27 +82,27 @@ function Home() {
     );
 
     return (
-        <Grid container spacing={15} className="justify-center">
+        <Grid container spacing={1} className="justify-center">
             <Grid gap={6} className="pt-1 flex flex-col flex-wrap md:flex-nowrap">
                 {/* Discretionary Message */}
-                <Grid size={12} className="w-full display-flex justify-center mt-12">
+                <Grid size={12} className="w-full display-flex justify-center">
                     <Typography variant="h4" fontWeight="bold" className="text-red-500 text-center">
                         If you feel you are in immediate danger, call 9-1-1
                     </Typography>
                 </Grid>
 
                 {/* Intro Section */}
-                <Grid size={12} className="my-4">
+                <Grid size={12} className="my-1">
                     <Typography
                         variant="h5"
                         fontWeight="bold"
                         className="text-center"
-                        sx={{ mb: 6 }}
+                        sx={{ mb: 3 }}
                     >
                         The resources available on this page are intended to help you take full
                         control of your digital presence.
                     </Typography>
-                    <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
+                    <Paper elevation={3} sx={{ p: 4, borderRadius: 2, mb: 4 }}>
                         <Typography variant="body1" className="text-center">
                             These resources provide practical tools and guidance for securing your
                             devices, online accounts, and even your physical location. Whether

@@ -4,13 +4,10 @@ import PageLayout from './components/Layout/PageLayout';
 import Devices from './components/pages/Devices';
 import FamilyAccounts from './components/pages/FamilyAccounts';
 import Home from './components/pages/Home';
+import NotFound from './components/pages/NotFound';
+import PhysicalSecurity from './components/pages/PhysicalSecurity';
 import SocialMedia from './components/pages/SocialMedia';
 import SocialMediaGuidPage from './components/pages/SocialMediaGuidePage';
-import PhysicalSecurity from './components/pages/PhysicalSecurity';
-
-// Placeholder Components
-// The pages are in /src/components and need to be stubbed out
-const NotFound = () => <h1 className="text-3xl font-bold">404 - Not Found</h1>;
 
 export default function App() {
     return (
