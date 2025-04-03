@@ -9,7 +9,7 @@ interface TopBarProps {
     title?: string;
 }
 
-const TopBar: React.FC<TopBarProps> = ({ title = 'Secure Your Digital Presence' }) => {
+function TopBar({ title = 'Secure Your Digital Presence' }: TopBarProps) {
     return (
         <Box
             sx={{
@@ -44,6 +44,6 @@ const TopBar: React.FC<TopBarProps> = ({ title = 'Secure Your Digital Presence' 
             </Box>
         </Box>
     );
-};
+}
 
 export default React.memo(TopBar);

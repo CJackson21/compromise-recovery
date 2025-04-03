@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { titleCase } from 'title-case';
 
@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 
 function Breadcrumb() {
     const { pathname } = useLocation();
-    const pathnames = useMemo(() => pathname.split('/').filter(Boolean), [pathname]);
+    const pathnames = React.useMemo(() => pathname.split('/').filter(Boolean), [pathname]);
     const linkStyle = { textDecoration: 'none', color: '#1976d2' };
 
     return (

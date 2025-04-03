@@ -1,4 +1,4 @@
-import React, { ReactNode, useMemo } from 'react';
+import React, { ReactNode } from 'react';
 
 // Layout components
 import Typography from '@mui/material/Typography';
@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid2';
 
 // Theme
 import { ThemeProvider } from '@mui/material/styles';
-import theme from '../../styles/theme';
+import theme from '../../styles/theme.ts';
 
 import { useLocation } from 'react-router-dom';
 
@@ -25,7 +25,7 @@ function PageLayout({ children, title }: LayoutProps) {
     const location = useLocation();
 
     // Titles the page based on which url is being visited
-    const pageTitle = useMemo(() => {
+    const pageTitle = React.useMemo(() => {
         const titleMap: Record<string, string> = {
             '/': 'Secure Your Digital Presence',
             '/social': 'Social Media & App Location Services',
