@@ -11,6 +11,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 // Guide data
 import {
@@ -22,13 +23,13 @@ import {
 const allSecurityGuides = [deviceSecurityGuide, computerSecurityGuide, hiddenDeviceGuide];
 
 function Devices() {
+    // Remove alignItems from cardStyles so it doesn't center all children
     const cardStyles = React.useMemo(
         () => ({
             p: 3,
             borderRadius: 2,
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
             minWidth: 250,
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
             '&:hover': { transform: 'translateY(-5px)', boxShadow: 6 },
@@ -49,22 +50,19 @@ function Devices() {
             {/* Introductory Section */}
             <Grid sx={{ xs: 12, sm: 10, md: 8 }}>
                 <Paper elevation={3} sx={cardStyles}>
-                    <Typography variant="h5" fontWeight="bold" className="text-center" mb={4}>
-                        Securing Your Personal Devices
-                    </Typography>
-                    <Typography
-                        variant="body1"
-                        color="textSecondary"
-                        className="text-center"
-                        mb={4}
-                    >
-                        Your personal devices store sensitive information, track your location, and
-                        connect to online accounts. If someone has access to your phone, laptop, or
-                        smartwatch, they may be able to monitor your activity, track your movements,
-                        or even control your accounts remotely. This section provides step-by-step
-                        guidance on how to lock down your devices, prevent tracking, and remove any
-                        unwanted access.
-                    </Typography>
+                    <Box sx={{ width: '100%', textAlign: 'center', mb: 4 }}>
+                        <Typography variant="h5" fontWeight="bold">
+                            Securing Your Personal Devices
+                        </Typography>
+                        <Typography variant="body1" color="textSecondary">
+                            Your personal devices store sensitive information, track your location,
+                            and connect to online accounts. If someone has access to your phone,
+                            laptop, or smartwatch, they may be able to monitor your activity, track
+                            your movements, or even control your accounts remotely. This section
+                            provides step-by-step guidance on how to lock down your devices, prevent
+                            tracking, and remove any unwanted access.
+                        </Typography>
+                    </Box>
                 </Paper>
             </Grid>
 
@@ -72,21 +70,19 @@ function Devices() {
             {allSecurityGuides.map((guide, index) => (
                 <Grid key={index} sx={{ xs: 12, sm: 10, md: 8, pb: 6 }}>
                     <Paper elevation={3} sx={cardStyles}>
-                        <Typography variant="h5" fontWeight="bold" className="text-center" mb={4}>
-                            {guide.title}
-                        </Typography>
-                        <Typography
-                            variant="body1"
-                            color="textSecondary"
-                            className="text-center"
-                            mb={4}
-                        >
-                            {guide.intro}
-                        </Typography>
-                        <List>
+                        <Box sx={{ width: '100%', textAlign: 'center', mb: 4 }}>
+                            <Typography variant="h5" fontWeight="bold">
+                                {guide.title}
+                            </Typography>
+                            <Typography variant="body1" color="textSecondary">
+                                {guide.intro}
+                            </Typography>
+                        </Box>
+                        {/* The List will take full width and be left aligned */}
+                        <List sx={{ width: '100%', textAlign: 'left' }}>
                             {guide.steps.map((step, idx) => (
-                                <ListItem key={idx}>
-                                    <ListItemIcon></ListItemIcon>
+                                <ListItem key={idx} disableGutters>
+                                    <ListItemIcon sx={{ minWidth: 'auto', mr: 1 }} />
                                     <ListItemText primary={step} />
                                 </ListItem>
                             ))}

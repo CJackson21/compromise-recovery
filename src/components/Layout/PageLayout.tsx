@@ -13,8 +13,8 @@ import theme from '../../styles/theme';
 import { useLocation } from 'react-router-dom';
 
 // Page layout helper components
-import TopBar from './TopBar';
-import Breadcrumb from './BreadCrumb';
+import TopBar from './TopBar.tsx';
+import Breadcrumb from './BreadCrumb.tsx';
 
 interface LayoutProps {
     children: ReactNode;

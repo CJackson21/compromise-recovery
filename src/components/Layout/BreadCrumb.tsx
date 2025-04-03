@@ -6,7 +6,7 @@ import { titleCase } from 'title-case';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
 
-const Breadcrumb = () => {
+function Breadcrumb() {
     const { pathname } = useLocation();
     const pathnames = useMemo(() => pathname.split('/').filter(Boolean), [pathname]);
     const linkStyle = { textDecoration: 'none', color: '#1976d2' };
@@ -31,6 +31,6 @@ const Breadcrumb = () => {
             })}
         </Breadcrumbs>
     );
-};
+}
 
 export default Breadcrumb;
