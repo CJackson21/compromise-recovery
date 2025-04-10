@@ -23,7 +23,6 @@ import {
 const allSecurityGuides = [deviceSecurityGuide, computerSecurityGuide, hiddenDeviceGuide];
 
 function Devices() {
-    // Remove alignItems from cardStyles so it doesn't center all children
     const cardStyles = React.useMemo(
         () => ({
             p: 3,
@@ -68,7 +67,7 @@ function Devices() {
 
             {/* Render Each Guide Card */}
             {allSecurityGuides.map((guide, index) => (
-                <Grid key={index} sx={{ xs: 12, sm: 10, md: 8, pb: 6 }}>
+                <Grid key={index} size={12} sx={{ pb: 6 }}>
                     <Paper elevation={3} sx={cardStyles}>
                         <Box sx={{ width: '100%', textAlign: 'center', mb: 4 }}>
                             <Typography variant="h5" fontWeight="bold">
