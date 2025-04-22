@@ -6,31 +6,45 @@ import { titleCase } from 'title-case';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
 
-function Breadcrumb() {
+const Breadcrumb = () => {
     const { pathname } = useLocation();
-    const pathnames = React.useMemo(() => pathname.split('/').filter(Boolean), [pathname]);
-    const linkStyle = { textDecoration: 'none', color: '#1976d2' };
+
+    const pathSegments = React.useMemo(() => {
+        return pathname.split('/').filter(Boolean);
+    }, [pathname]);
+
+    const linkStyle = {
+        textDecoration: 'none',
+        color: '#1976d2',
+    };
 
     return (
         <Breadcrumbs aria-label="breadcrumb" sx={{ mb: 2 }}>
+            {/* Always show Home link */}
             <Link to="/" style={linkStyle}>
                 <Typography fontWeight="bold">Home</Typography>
             </Link>
-            {pathnames.map((segment, index) => {
-                const to = `/${pathnames.slice(0, index + 1).join('/')}`;
-                const isLast = index === pathnames.length - 1;
-                return isLast ? (
-                    <Typography key={to} color="text.primary">
-                        {titleCase(segment)}
-                    </Typography>
-                ) : (
-                    <Link key={to} to={to} style={linkStyle}>
+
+            {pathSegments.map((segment, index) => {
+                const isLastSegment = index === pathSegments.length - 1;
+                const fullPath = '/' + pathSegments.slice(0, index + 1).join('/');
+
+                if (isLastSegment) {
+                    return (
+                        <Typography key={fullPath} color="text.primary">
+                            {titleCase(segment)}
+                        </Typography>
+                    );
+                }
+
+                return (
+                    <Link key={fullPath} to={fullPath} style={linkStyle}>
                         <Typography>{titleCase(segment)}</Typography>
                     </Link>
                 );
             })}
         </Breadcrumbs>
     );
-}
+};
 
 export default Breadcrumb;

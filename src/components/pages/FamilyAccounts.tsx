@@ -19,6 +19,7 @@ import Typography from '@mui/material/Typography';
 import { familyAccountsGuides } from '../../data/familyAccountsInformation.ts';
 
 function FamilyAccounts() {
+    // Memoize styles for the cards
     const cardStyles = React.useMemo(
         () => ({
             p: 3,

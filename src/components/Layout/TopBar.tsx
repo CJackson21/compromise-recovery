@@ -24,7 +24,7 @@ function TopBar({ title = 'Secure Your Digital Presence' }: TopBarProps) {
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, width: '100%' }}>
                 <Link to="/">
                     <img
-                        src="/img/gf-blue-gold.png"
+                        src="/img/gfu-logo/gf-blue-gold.png"
                         alt="Logo"
                         style={{ height: '3rem', width: 'auto' }}
                         className="sm:h-16"
@@ -34,10 +34,7 @@ function TopBar({ title = 'Secure Your Digital Presence' }: TopBarProps) {
                     variant="h4"
                     component="h2"
                     fontWeight="bold"
-                    sx={{
-                        fontSize: { xs: '1.5rem', sm: '3rem' },
-                        color: '#1e3a8a',
-                    }}
+                    sx={{ fontSize: { xs: '1.5rem', sm: '3rem' }, color: '#1e3a8a' }}
                 >
                     {title}
                 </Typography>

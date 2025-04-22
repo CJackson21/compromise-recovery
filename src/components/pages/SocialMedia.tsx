@@ -12,16 +12,15 @@ import Paper from '@mui/material/Paper';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import { FaSnapchatGhost } from 'react-icons/fa';
+import XIcon from '@mui/icons-material/X';
+import { Snapchat } from 'iconsax-reactjs';
 
 interface PlatformData {
     name: string;
-    Icon?: React.ComponentType<any>;
+    icon?: React.ComponentType<any>;
     color?: string;
     isSocialIcon?: boolean;
     url?: string;
-    sxExtra?: object;
 }
 
 export default function SocialMedia() {
@@ -40,50 +39,32 @@ export default function SocialMedia() {
         []
     );
 
-    // mui's library at this time does not have a
-    // snapchat icon, so the one used in this project
-    // was pulled from another library, this just
-    // makes it look cleaner
-    const SnapchatIcon = React.useMemo(() => {
-        return () => (
-            <Box
-                sx={{
-                    height: 60,
-                    width: 60,
-                    borderRadius: '10%',
-                    backgroundColor: '#FFFC00',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    mb: 0,
-                }}
-            >
-                <FaSnapchatGhost style={{ fontSize: 40, color: 'black ' }} />
-            </Box>
-        );
-    }, []);
-
     // Define the data for each social media platform
     const socialMediaData: PlatformData[] = React.useMemo(
         () => [
             {
                 name: 'Facebook',
-                Icon: FacebookIcon,
+                icon: FacebookIcon,
                 color: '#1877F2',
+                url: 'facebook',
             },
             {
                 name: 'Instagram',
-                Icon: InstagramIcon,
+                icon: InstagramIcon,
                 color: '#E4405F',
+                url: 'instagram',
             },
             {
-                name: 'Twitter',
-                Icon: TwitterIcon,
-                color: '#1DA1F2',
+                name: 'X/Twitter',
+                icon: XIcon,
+                color: '#000000',
+                url: 'twitter',
             },
             {
                 name: 'Snapchat',
-                Icon: SnapchatIcon,
+                icon: Snapchat,
+                color: '#FFD700',
+                url: 'snapchat',
             },
         ],
         []
@@ -91,19 +72,33 @@ export default function SocialMedia() {
 
     // Helper function to render the icon
     const renderIcon = React.useCallback((platform: PlatformData) => {
-        if (platform.Icon) {
-            const IconComponent = platform.Icon;
+        if (!platform.icon) {
+            return null;
+        }
+
+        const IconComponent = platform.icon;
+
+        const isIconsax = IconComponent === Snapchat;
+
+        if (isIconsax) {
             return (
                 <IconComponent
-                    style={{
-                        fontSize: 55,
-                        color: platform.color,
-                        marginBottom: 8,
-                    }}
+                    size="55"
+                    color={platform.color}
+                    variant="Bold"
+                    style={{ marginBottom: 8 }}
                 />
             );
         }
-        return null;
+        return (
+            <IconComponent
+                style={{
+                    fontSize: 55,
+                    color: platform.color,
+                    marginBottom: 8,
+                }}
+            />
+        );
     }, []);
 
     // Wrap every card with Link for internal navigation
@@ -112,7 +107,7 @@ export default function SocialMedia() {
             socialMediaData.map((platform) => (
                 <Link
                     key={platform.name}
-                    to={`/social/${platform.name.toLowerCase()}`}
+                    to={`/social/${platform.url}`}
                     style={{ textDecoration: 'none' }}
                 >
                     <Paper elevation={3} sx={{ ...cardStyles, cursor: 'pointer' }}>

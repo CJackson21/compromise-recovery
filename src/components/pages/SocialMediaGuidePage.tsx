@@ -26,11 +26,16 @@ interface Guide {
 }
 
 function SocialMediaGuidePage() {
-    const { platform } = useParams();
-    const [expanded, setExpanded] = React.useState<number | null>(null);
-    const guide: Guide | undefined = React.useMemo(
-        () => (platform ? socialMediaGuides[platform] : undefined),
-        [platform]
+    const { platform } = useParams<{ platform?: string }>();
+    const guide = React.useMemo(() => {
+        return platform && platform in socialMediaGuides
+            ? socialMediaGuides[platform as keyof typeof socialMediaGuides]
+            : undefined;
+    }, [platform]);
+
+    const [expanded, setExpanded] = React.useState<number | null>(
+        // Auto-expand the dropdown if it is the only one available
+        guide?.steps.length === 1 ? 0 : null
     );
 
     // Using useCallback with a functional update to reliably toggle expansion.
@@ -40,7 +45,7 @@ function SocialMediaGuidePage() {
 
     if (!guide) {
         return (
-            <Box className="p-6">
+            <Box className="p-6 text-center">
                 <Typography variant="h4" color="error">
                     Platform not found.
                 </Typography>

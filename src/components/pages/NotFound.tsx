@@ -15,7 +15,7 @@ function NotFound() {
             {/* Main dancing cat area */}
             <Grid size={12} className="flex items-center justify-center overflow-hidden mt-5">
                 <img
-                    src="/img/dancing_cat.gif"
+                    src="/img/error-not-found-img/dancing_cat.gif"
                     alt="Dancing Cat"
                     className="min-h-[60vh] max-w-[60vw]"
                 />

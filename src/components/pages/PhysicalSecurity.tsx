@@ -18,6 +18,7 @@ import Typography from '@mui/material/Typography';
 import { physicalSecurityGuides } from '../../data/physicalSecurityGuide.ts';
 
 function PhysicalSecurity() {
+    // Memoize styles for the cards
     const cardStyles = React.useMemo(
         () => ({
             p: 3,

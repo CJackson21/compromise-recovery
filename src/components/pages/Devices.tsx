@@ -23,6 +23,7 @@ import {
 const allSecurityGuides = [deviceSecurityGuide, computerSecurityGuide, hiddenDeviceGuide];
 
 function Devices() {
+    // Memoize styles for the cards
     const cardStyles = React.useMemo(
         () => ({
             p: 3,

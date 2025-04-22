@@ -13,8 +13,8 @@ import theme from '../../styles/theme.ts';
 import { useLocation } from 'react-router-dom';
 
 // Page layout helper components
-import TopBar from './TopBar.tsx';
-import Breadcrumb from './BreadCrumb.tsx';
+import TopBar from './TopBar';
+import Breadcrumb from './BreadCrumb';
 
 interface LayoutProps {
     children: ReactNode;
@@ -33,6 +33,9 @@ function PageLayout({ children, title }: LayoutProps) {
             '/devices': 'All Devices (Laptop & Phones)',
             '/physical': 'Physical Security',
             '/social/instagram': 'Instagram Security Navigation',
+            '/social/facebook': 'Facebook Security Navigation',
+            '/social/twitter': 'X/Twitter Security Navigation',
+            '/social/snapchat': 'Snapchat Security Navigation',
         };
         return titleMap[location.pathname] || '404 - Page Not Found';
     }, [location.pathname]);
