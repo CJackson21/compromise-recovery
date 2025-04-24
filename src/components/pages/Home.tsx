@@ -36,39 +36,53 @@ function Home() {
     // Neumorphism Lite style for the boxes
     const boxStyles = React.useMemo(
         () => ({
+            /* --- unchanged sizing --- */
             width: '100%',
+            maxWidth: 280,
             height: '11em',
+
+            /* --- flex layout --- */
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'flex-start',
+            justifyContent: 'center',
             textAlign: 'center',
-            borderRadius: '1.25rem',
-            background: 'linear-gradient(to bottom right, #c8f2c2, #a6c8ff)',
+
+            /* --- neumorphism-lite look --- */
+            borderRadius: '1.5rem',
+            background: 'linear-gradient(145deg, #f5f7fa 0%, #e9edf3 100%)',
             p: 3,
             boxShadow: `
-        6px 6px 12px rgba(0, 0, 0, 0.15),
-        -6px -6px 12px rgba(255, 255, 255, 0.4)
-      `,
-            transition: 'all 0.3s ease-in-out',
+            8px 8px 16px rgba(0, 0, 0, 0.08),   /* darker bottom-right */
+            -8px -8px 16px rgba(255, 255, 255, 0.9), /* lighter top-left */
+            inset 0 0 0 1px rgba(0, 0, 0, 0.02),     /* faint inner ring */
+            inset 0 0 0 2px rgba(255, 255, 255, 0.6) /* faint highlight ring */
+          `,
+            transition: 'transform 0.18s ease, box-shadow 0.18s ease',
+
             '&:hover': {
                 transform: 'translateY(-4px)',
                 boxShadow: `
-          3px 3px 8px rgba(0, 0, 0, 0.2),
-          -3px -3px 8px rgba(255, 255, 255, 0.5)
-        `,
+              4px 4px 12px rgba(0, 0, 0, 0.12),
+              -4px -4px 12px rgba(255, 255, 255, 0.95),
+              inset 0 0 0 1px rgba(0, 0, 0, 0.02),
+              inset 0 0 0 2px rgba(255, 255, 255, 0.6)
+            `,
             },
             '&:active': {
                 transform: 'translateY(-2px)',
             },
+
+            /* --- icon & text tweaks --- */
             '& svg': {
-                fontSize: '2.75rem',
-                color: '#333',
+                fontSize: '3rem',
+                color: '#4c6ef5', // accent the icon a bit
             },
             '& .MuiTypography-root': {
-                fontWeight: 'bold',
-                fontSize: '1.2rem',
-                color: '#222',
+                marginTop: '0.5rem',
+                fontWeight: 700,
+                fontSize: '1.1rem',
+                color: '#334155',
             },
         }),
         []

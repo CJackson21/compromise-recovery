@@ -26,7 +26,7 @@ export const socialMediaGuides: Record<string, SocialMediaGuide> = {
         name: 'Instagram',
         steps: [
             {
-                title: 'Deactivate on Mobile',
+                title: 'Deactivate On Mobile',
                 steps: [
                     'Go to your Instagram profile and tap the menu icon (three horizontal lines) in the top-right corner.',
                     'Tap Accounts Center under the “Settings and activity” section.',
@@ -45,7 +45,7 @@ export const socialMediaGuides: Record<string, SocialMediaGuide> = {
                 ],
             },
             {
-                title: 'Deactivate on a Computer',
+                title: 'Deactivate On A Computer',
                 steps: [
                     'Click the “More” icon in the lower-left corner of Instagram, then select Settings.',
                     'In the Settings panel, click on “Accounts Center” under the Meta section.',
@@ -79,7 +79,7 @@ export const socialMediaGuides: Record<string, SocialMediaGuide> = {
         name: 'Facebook',
         steps: [
             {
-                title: 'Deactivate on Mobile',
+                title: 'Deactivate On Mobile',
                 steps: [
                     'Open the Facebook app and tap the menu icon (three horizontal lines) in the top-right corner.',
                     'Tap the dropdown arrow next to your profile and select “Go to Accounts Center.”',
@@ -132,6 +132,42 @@ export const socialMediaGuides: Record<string, SocialMediaGuide> = {
                     '/img/snapchat/secure_snapchat_6.png',
                     '/img/snapchat/secure_snapchat_7.png',
                     '/img/snapchat/secure_snapchat_8.png',
+                ],
+            },
+        ],
+    },
+    twitter: {
+        name: 'X/Twitter',
+        steps: [
+            {
+                title: 'Deactivate On Mobile',
+                steps: [
+                    'Tap your profile picture in the top left corner to open the menu, then scroll down and tap "Settings and privacy".',
+                    'Scroll down and tap "Settings and privacy',
+                    'Tap "Your account" to access account management options.',
+                    'Tap "Deactivate your account", review the deactivation details including info on subscriptions, data downloads, and the 30-day reactivation window. Scroll to the bottom and tap the red "Deactivate" button, then enter your password if prompted to confirm the deactivation.',
+                ],
+                images: [
+                    '/img/x/deactivate_x_mobile_1.png',
+                    '/img/x/deactivate_x_mobile_2.png',
+                    '/img/x/deactivate_x_mobile_3.png',
+                    '/img/x/deactivate_x_mobile_4.png',
+                ],
+            },
+            {
+                title: 'Deactivate On A Computer',
+                steps: [
+                    'Click "More" in the left-hand navigation bar to expand additional options.',
+                    'Select "Settings and privacy" from the dropdown menu.',
+                    'Click "Your account" in the Settings sidebar, then choose "Deactivate your account".',
+                    'Review the deactivation details, then click the red "Deactivate" button. Enter your account password and click "Deactivate" again to confirm.',
+                ],
+                images: [
+                    '/img/x/deactivate_x_desktop_1.png',
+                    '/img/x/deactivate_x_desktop_2.png',
+                    '/img/x/deactivate_x_desktop_3.png',
+                    '/img/x/deactivate_x_desktop_4.png',
+                    '/img/x/deactivate_x_desktop_5.png',
                 ],
             },
         ],

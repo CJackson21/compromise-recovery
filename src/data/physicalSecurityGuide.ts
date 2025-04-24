@@ -30,7 +30,7 @@ export const physicalSecurityGuides: GuideSection[] = [
         links: [
             {
                 label: 'Personal Safety Tips (RAINN)',
-                url: 'https://www.rainn.org/articles/personal-safety',
+                url: 'https://rainn.org/articles/safety-planning',
             },
             { label: 'Safe Ride Tips', url: 'https://www.uber.com/us/en/ride/safety/' },
         ],

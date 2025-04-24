@@ -44,33 +44,31 @@ function PageLayout({ children, title }: LayoutProps) {
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <TopBar title={pageTitle} />
-            <Box sx={{ position: 'relative', width: '100%' }}>
-                <Box sx={{ position: 'absolute', left: '1rem', zIndex: 10 }}>
-                    <Breadcrumb />
-                </Box>
-
-                {/* Main layout grid */}
-                <Grid
-                    container
-                    spacing={2}
-                    justifyContent="center"
-                    sx={{ mt: 4, px: 2, maxWidth: 'lg', mx: 'auto' }}
-                >
-                    {/* Page title */}
-                    <Grid size={12}>
-                        <Box component="header" sx={{ mb: 2 }}>
-                            <Typography variant="h4" fontWeight="bold">
-                                {title}
-                            </Typography>
-                        </Box>
-                    </Grid>
-
-                    {/* Main content */}
-                    <Grid size={12}>
-                        <Box component="main">{children}</Box>
-                    </Grid>
-                </Grid>
+            <Box sx={{ position: 'absolute', left: '1rem', zIndex: 10 }}>
+                <Breadcrumb />
             </Box>
+
+            {/* Main layout grid */}
+            <Grid
+                container
+                spacing={2}
+                justifyContent="center"
+                sx={{ mt: 4, px: 2, maxWidth: 'lg', mx: 'auto' }}
+            >
+                {/* Page title */}
+                <Grid size={12}>
+                    <Box component="header" sx={{ mb: 2 }}>
+                        <Typography variant="h4" fontWeight="bold">
+                            {title}
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                {/* Main content */}
+                <Grid size={12}>
+                    <Box component="main">{children}</Box>
+                </Grid>
+            </Grid>
         </ThemeProvider>
     );
 }
